@@ -13,3 +13,12 @@ module "ec2" {
   instance_name        = var.instance_name
   iam_instance_profile = module.iam.ssm_profile
 }
+
+module "cloudtrail" {
+  source      = "./modules/cloudtrail"
+  instance_id = module.ec2.inda_inst_id
+}
+
+output "ssm_connection_command" {
+  value = "aws ssm start-session --target ${module.ec2.inda_inst_id}"
+}

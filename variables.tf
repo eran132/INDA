@@ -20,5 +20,6 @@ variable "instance_type" {
 
 variable "iam_instance_profile" {
   description = "The IAM instance profile to attach"
+  default     = "ssm_profile"
   type        = string
 }
