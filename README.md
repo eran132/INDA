@@ -18,12 +18,22 @@
      ```
    - Follow the prompts to enter your AWS Access Key ID, Secret Access Key, region, and output format.
 
-5. **Run Terraform Apply**
+5. **Set Up `terraform.tfvars` File**
+   - Create a file named `terraform.tfvars` in the root of your project directory and add the following content:
+     ```hcl
+     region               = "<region, us-west-2 for example>"
+     ami                  = "<ami_id>"
+     instance_name        = "<name_of_instance>"
+     instance_type        = "<type_of_instance, t2.micro for example>"
+     iam_instance_profile = "<name_of_IAM_Instance_Profile>"
+     ```
+
+6. **Run Terraform Apply**
    - Navigate to the project directory and run the following command:
      ```sh
      terraform apply
      ```
    - When prompted, type `yes` to confirm the changes.
 
-6. **Retrieve Connection Command**
+7. **Retrieve Connection Command**
    - After `terraform apply` finishes, the connection command will be displayed in the output. Use this command to start a session with the EC2 instance.
