@@ -11,12 +11,19 @@
 3. **Restart the Terminal**
    - After installing the AWS CLI and Sessions Manager Plugin, restart your terminal to ensure all changes take effect.
 
-4. **Run Terraform Apply**
+4. **Configure AWS Credentials**
+   - Run the following command to configure your AWS credentials:
+     ```sh
+     aws configure
+     ```
+   - Follow the prompts to enter your AWS Access Key ID, Secret Access Key, region, and output format.
+
+5. **Run Terraform Apply**
    - Navigate to the project directory and run the following command:
      ```sh
      terraform apply
      ```
    - When prompted, type `yes` to confirm the changes.
 
-5. **Retrieve Connection Command**
+6. **Retrieve Connection Command**
    - After `terraform apply` finishes, the connection command will be displayed in the output. Use this command to start a session with the EC2 instance.
